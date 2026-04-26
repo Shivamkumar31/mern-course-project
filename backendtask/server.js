@@ -8,11 +8,9 @@ connectDB();
 
 const app = express();
 
-// ✅ CORS (ONLY ONCE)
+// ✅ CORRECT CORS CONFIG
 app.use(cors({
-  origin: "http://localhost:9002",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  origin: true, // ✅ BOOLEAN (NOT STRING)
   credentials: true
 }));
 
